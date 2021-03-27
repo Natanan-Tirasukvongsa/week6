@@ -370,6 +370,8 @@ void encoderSpeedReaderCycle() {
 	for(register int i=0 ;i < CAPTURENUM-1;i++)
 	{
 		DiffTime[i]  = capturedata[(CapPos+1+i)%CAPTURENUM]-capturedata[(CapPos+i)%CAPTURENUM]; //ช่องปัจจุบัน - ช่องอดีต
+		//วนครบหนึ่งรอบถึงจะขึ้นเวลา diff ปกติได้
+		//ถ้าครบ 1 รอบ ค่าจะคงที่
 		//time never go back, but timer can over flow , conpensate that
 		if (DiffTime[i] <0)
 		{
