@@ -1085,6 +1085,8 @@ void encoderSpeedReaderCycle() {
  8000924:	1acb      	subs	r3, r1, r3
  8000926:	4a18      	ldr	r2, [pc, #96]	; (8000988 <encoderSpeedReaderCycle+0xa4>)
  8000928:	f842 3024 	str.w	r3, [r2, r4, lsl #2]
+		//วนครบหนึ่งรอบถึงจะขึ้นเวลา diff ปกติได้
+		//ถ้าครบ 1 รอบ ค่าจะคงที่
 		//time never go back, but timer can over flow , conpensate that
 		if (DiffTime[i] <0)
  800092c:	4b16      	ldr	r3, [pc, #88]	; (8000988 <encoderSpeedReaderCycle+0xa4>)
